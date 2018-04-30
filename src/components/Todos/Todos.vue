@@ -11,7 +11,8 @@
     </header>
     <div class="main">
       <ul class="todo-list" v-for="todo in todos">
-        <li class="todo">
+        <li class="todo" :class="{completed: todo.completed}">
+          <input type="checkbox" v-model="todo.completed" class="toggle">
           <div class="view"><label>{{ todo.name }}</label></div>
         </li>
       </ul>
