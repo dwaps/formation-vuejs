@@ -2,7 +2,12 @@
   <section class="todoapp">
     <header class="header">
       <h1>Todos</h1>
-      <input type="text" class="new-todo" placeholder="Ajouter une tache" v-model="newTodo">
+      <input
+        type="text"
+        class="new-todo"
+        placeholder="Ajouter une tache"
+        v-model="newTodo"
+        @keyup.enter="addTodo">
     </header>
     <div class="main">
       <ul class="todo-list" v-for="todo in todos">
@@ -23,6 +28,15 @@ export default {
         completed: false
       }],
       newTodo: '',
+    }
+  },
+  methods: {
+    addTodo() {
+      this.todos.push({
+        completed: false,
+        name: this.newTodo
+      });
+      this.newTodo = '';
     }
   }
 }
