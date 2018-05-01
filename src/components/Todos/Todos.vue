@@ -44,6 +44,12 @@
             @click.prevent="filter = 'done'">Faites</a>
         </li>
       </ul>
+      <button
+        v-show="atLeastOneDone"
+        class="clear-completed"
+        @click="deleteCompleted">
+          Supprimer les tâches finies
+      </button>
     </footer>
   </section>
 </template>
