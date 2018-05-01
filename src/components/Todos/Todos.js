@@ -18,6 +18,9 @@ export default {
         this.todos.forEach(todo => todo.completed = checked);
       }
     },
+    hasTodos() {
+      return this.todos.length > 0;
+    },
     remaining() {
       return this.todos.filter(todo => !todo.completed).length;
     },
@@ -38,6 +41,9 @@ export default {
         name: this.newTodo
       });
       this.newTodo = '';
+    },
+    deleteTodo(todo) {
+      this.todos = this.todos.filter(currentTodo => currentTodo !== todo);
     }
   }
 }
