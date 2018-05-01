@@ -1,14 +1,16 @@
 <template>
   <section class="todoapp">
+
     <header class="header">
       <h1>Todos</h1>
       <input
         type="text"
         class="new-todo"
-        placeholder="Ajouter une tache"
+        placeholder="Ajouter une tâche"
         v-model="newTodo"
         @keyup.enter="addTodo">
     </header>
+
     <div class="main">
       <ul class="todo-list" v-for="todo in todos">
         <li class="todo" :class="{completed: todo.completed}">
@@ -17,6 +19,10 @@
         </li>
       </ul>
     </div>
+
+    <footer class="footer">
+      <span class="todo-count"><strong>{{ remaining }}</strong> tâches à faire</span>
+    </footer>
   </section>
 </template>
 
@@ -29,6 +35,11 @@ export default {
         completed: false
       }],
       newTodo: '',
+    }
+  },
+  computed: {
+    remaining() {
+      return this.todos.filter(todo => !todo.completed).length;
     }
   },
   methods: {
