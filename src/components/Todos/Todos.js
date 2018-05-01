@@ -7,6 +7,7 @@ export default {
       }],
       newTodo: '',
       filter: 'all',
+      editable: null,
     }
   },
   computed: {
@@ -42,6 +43,12 @@ export default {
     },
     deleteCompleted() {
       this.todos = this.todos.filter(todo => !todo.completed);
+    },
+    editTodo(todo) {
+      this.editable = todo;
+    },
+    editingDone() {
+      this.editable = null;
     }
   }
 }
