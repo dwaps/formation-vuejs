@@ -5,12 +5,19 @@ export default {
         name: 'Tache de test',
         completed: false
       }],
-      allDone: false,
       newTodo: '',
       filter: 'all',
     }
   },
   computed: {
+    allDone: {
+      get() {
+        return this.remaining === 0;
+      },
+      set(checked) {
+        this.todos.forEach(todo => todo.completed = checked);
+      }
+    },
     remaining() {
       return this.todos.filter(todo => !todo.completed).length;
     },
