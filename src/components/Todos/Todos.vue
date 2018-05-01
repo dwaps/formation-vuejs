@@ -22,36 +22,29 @@
 
     <footer class="footer">
       <span class="todo-count"><strong>{{ remaining }}</strong> tâches à faire</span>
+      <ul class="filters">
+        <li>
+          <a
+            href="#"
+            :class="{selected: filter === 'all'}"
+            @click="filter = 'all'">Toutes</a>
+        </li>
+        <li>
+          <a
+            href="#"
+            :class="{selected: filter === 'todo'}"
+            @click="filter = 'todo'">A faire</a>
+        </li>
+        <li>
+          <a
+            href="#"
+            :class="{selected: filter === 'done'}"
+            @click="filter = 'done'">Faites</a>
+        </li>
+      </ul>
     </footer>
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      todos: [{
-        name: 'Tache de test',
-        completed: false
-      }],
-      newTodo: '',
-    }
-  },
-  computed: {
-    remaining() {
-      return this.todos.filter(todo => !todo.completed).length;
-    }
-  },
-  methods: {
-    addTodo() {
-      this.todos.push({
-        completed: false,
-        name: this.newTodo
-      });
-      this.newTodo = '';
-    }
-  }
-}
-</script>
-
+<script src="./Todos.js"></script>
 <style src="./todos.css"></style>
