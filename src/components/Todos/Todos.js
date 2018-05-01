@@ -1,3 +1,5 @@
+import Vue from 'vue';
+
 export default {
   data() {
     return {
@@ -53,7 +55,11 @@ export default {
   },
   directives: {
     focus(el, value) {
-      if (value) el.focus();
+      if (value) {
+        Vue.nextTick(() => {
+          el.focus();
+        })
+      }
     }
   }
 }
