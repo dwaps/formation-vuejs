@@ -1,21 +1,46 @@
-# todolist
+![](https://dwaps.fr/img/logo-300.png)
 
-> A Vue.js project
+# FORMATION VUE JS
+L'entreprise **DWAPS Formation** a été créée le 1er Octobre 2015.
 
-## Build Setup
+Sa vocation est de former des développeurs web et mobile.
 
-``` bash
-# install dependencies
-npm install
+Rendez-vous sur le site **[dwaps.fr](http://dwaps.fr "DWAPS")** pour plus d'informations.
 
-# serve with hot reload at localhost:8080
-npm run dev
+---
 
-# build for production with minification
-npm run build
+# Installation
+## 1. Récupération du code des modules
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+  a. Choisissez un emplacement sur votre ordinateur et saisissez la commande suivante dans un terminal :
+    
+    git clone https://github.com/dwaps/formation-vuejs
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+OU BIEN,
+
+  b. Télécharger l'archive zip [https://github.com/dwaps/formation-vuejs/archive/master.zip](https://github.com/dwaps/formation-vuejs/archive/master.zip). Il vous suffira ensuite de la décompresser ou vous voulez pour travailler.
+
+
+## 2. Utilisation
+Pour atteindre un TP en particulier, utilisez la commande `git checkout` suivie de l'étiquette du TP. Chez DWAPS, une étiquette de TP est toujours représentée de cette façon :
+
+* les initiales *tp* suivies d'un
+* *numero* (correspondant au numéro du TP sachant que ils sont classés par difficulté croissante)
+
+Ainsi, si je veux me rendre au 3ème TP, je dois saisir cette commande depuis le dépôt :
+
+    git checkout tp3
+
+Pour savoir à quoi correspondent les divers TP, il suffit de les lister à l'aide de cette commande :
+
+    git log
+
+Ou pour y voir plus clair :
+
+    git log --pretty=oneline --decorate --abbrev-commit
+
+*Remarque : Ces TP sont destinés principalement aux étudiants de **DWAPS Formation**. Cependant, ils sont gracieusement exposés ici au public pour que chacun puisse en profiter. Les centres de formations sont également autorisés à les utiliser pour leurs cours sans restrictions particulières. :)*
+
+---
+
+[® DWAPS Formation - Michael Cornillon](http://dwaps.fr "DWAPS")

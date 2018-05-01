@@ -1,7 +1,7 @@
 {
   "name": "todolist",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "TP tiré du site Grafikart",
   "author": "Michael Cornillon <contact@dwaps.fr>",
   "private": true,
   "scripts": {
