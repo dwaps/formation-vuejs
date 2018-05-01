@@ -10,6 +10,7 @@ export default {
       newTodo: '',
       filter: 'all',
       editable: null,
+      oldTodo: '',
     }
   },
   computed: {
@@ -40,17 +41,16 @@ export default {
       });
       this.newTodo = '';
     },
-    deleteTodo(todo) {
-      this.todos = this.todos.filter(currentTodo => currentTodo !== todo);
-    },
-    deleteCompleted() {
-      this.todos = this.todos.filter(todo => !todo.completed);
-    },
+    deleteTodo(todo) { this.todos = this.todos.filter(currentTodo => currentTodo !== todo); },
+    deleteCompleted() { this.todos = this.todos.filter(todo => !todo.completed); },
     editTodo(todo) {
       this.editable = todo;
+      this.oldTodo = todo.name;
     },
-    editingDone() {
-      this.editable = null;
+    editingDone() { this.editable = null; },
+    cancelEditing() {
+      this.editable.name = this.oldTodo;
+      this.editingDone();
     }
   },
   directives: {

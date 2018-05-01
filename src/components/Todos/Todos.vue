@@ -23,6 +23,7 @@
           <input
             type="text"
             @keyup.enter="editingDone"
+            @keyup.esc="cancelEditing"
             @blur="editingDone"
             v-focus="todo === editable"
             class="edit"
