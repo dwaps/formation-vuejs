@@ -5,6 +5,7 @@ export default {
         name: 'Tache de test',
         completed: false
       }],
+      allDone: false,
       newTodo: '',
       filter: 'all',
     }

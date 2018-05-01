@@ -12,6 +12,7 @@
     </header>
 
     <div class="main">
+      <input type="checkbox" class="toggle-all" v-model="allDone">
       <ul class="todo-list" v-for="todo in filteredTodos">
         <li class="todo" :class="{completed: todo.completed}">
           <input type="checkbox" v-model="todo.completed" class="toggle">
