@@ -50,5 +50,10 @@ export default {
     editingDone() {
       this.editable = null;
     }
+  },
+  directives: {
+    focus(el, value) {
+      if (value) el.focus();
+    }
   }
 }

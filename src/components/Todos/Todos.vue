@@ -14,7 +14,7 @@
     <div class="main">
       <input v-show="hasTodos" type="checkbox" class="toggle-all" v-model="allDone">
       <ul class="todo-list" v-for="todo in filteredTodos">
-        <li class="todo" :class="{completed: todo.completed, editing: editable === todo}">
+        <li class="todo" :class="{completed: todo.completed, editing: todo === editable}">
           <div class="view">
             <input type="checkbox" v-model="todo.completed" class="toggle">
             <label @dblclick="editTodo(todo)">{{ todo.name }}</label>
@@ -24,6 +24,7 @@
             type="text"
             @keyup.enter="editingDone"
             @blur="editingDone"
+            v-focus="todo === editable"
             class="edit"
             v-model="todo.name">
         </li>
