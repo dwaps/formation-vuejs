@@ -44,7 +44,10 @@ export default {
       this.editable = todo;
       this.oldTodo = todo.name;
     },
-    editingDone() { this.editable = null; },
+    editingDone() {
+      this.todos = this.todos.filter(todo => todo.name.length > 0);
+      this.editable = null;
+    },
     cancelEditing() {
       this.editable.name = this.oldTodo;
       this.editingDone();
